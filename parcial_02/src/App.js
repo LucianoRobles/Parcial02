@@ -1,30 +1,80 @@
+import { React, Fragment, useState, useEffect } from "react";
+import {BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import Footer from "./componentes/Footer";
+import Header from "./componentes/Header";
+import Home from "./componentes/Home";
+import Formulario from "./componentes/Formulario";
+import Conocenos from "./componentes/Conocenos";
+import Tienda from "./componentes/Tienda";
+import {Grid} from '@mui/material';
+import Carrito from "./componentes/Carrito";
 
-import { Fragment } from 'react';
-import './App.css';
-import Footer from './componentes/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container,Row} from '../node_modules/react-bootstrap/';
+export default function App() {
 
-function App() {
+  //Hook and Local Storage
+
+  let carritoInicial = JSON.parse(localStorage.getItem('carrito'));
+  if (!carritoInicial) {
+    carritoInicial = [];
+  };
+
+  const [carrito, modificarCarrito] = useState(carritoInicial);
+
+  useEffect(
+    () => {
+      if (carritoInicial) {
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+      } else {
+        localStorage.setItem('carrito', JSON.stringify([]));
+      }
+    }, [carritoInicial]
+  );
+
+  // App
+
   return (
+
     <Fragment>
-      <Container>
-          <Row>
-            <h1>Aca va el header</h1>
-          </Row>
-          <Row>
-            <h1>Aca va el body</h1>
-          </Row>
-          <Row>
-            <Footer/>
-          </Row>
-        </Container>
-          
-          
-          
+      <Router>
+        <Grid
+          container
+          spacing={1}
+        >
+          <Grid item xs={12}>
+            <Header />
+          </Grid>
+          <Grid item xs={12}>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/reservarTurno">
+                <Formulario />
+              </Route>
+              <Route path="/conocenos">
+                <Conocenos />
+              </Route>
+              <Route path="/tienda">
+                <Tienda
+                  carrito={carrito}
+                  modificarCarrito={modificarCarrito}
+                />
+              </Route>
+              <Route path="/carrito">
+                <Carrito
+                  carrito={carrito}
+                  modificarCarrito={modificarCarrito}
+                />
+              </Route>
+            </Switch>
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
+        </Grid>
+      </Router>
 
     </Fragment>
+
   );
 }
-
-export default App;
