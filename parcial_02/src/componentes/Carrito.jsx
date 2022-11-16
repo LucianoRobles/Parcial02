@@ -16,7 +16,7 @@ const Carrito = ({ carrito, modificarCarrito }) => {
     
     return (
         <div className="container">
-            <Typography variant="h3" align="center">Carrito de compra</Typography>
+            <Typography variant="h3" align="center">{titulo2}</Typography>
             <div className="carrito-container">   
             {
                 carrito.map( (product, idx) => 

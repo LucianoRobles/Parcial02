@@ -1,9 +1,6 @@
-import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+import {AppBar,Container,Button,Icon} from '@mui/material';
 import { Link } from 'react-router-dom';
-import { React, Fragment } from "react";
-import Icon from '@mui/material/Icon';
+import { React } from "react";
 
 
 
@@ -20,10 +17,8 @@ function Header() {
         
             <AppBar
                 position="static"
-               
             >
-                <Container
-                    
+                <Container                    
                 >
                     {pages.map(page =>
                         <Link

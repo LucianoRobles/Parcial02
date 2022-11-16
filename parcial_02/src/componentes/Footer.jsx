@@ -1,7 +1,5 @@
 import React from 'react';
-import { Fragment } from 'react';
-import { Grid, Link, Box, TextField, Button, SvgIcon, Typography } from '@mui/material';
-import { } from 'bootstrap';
+import { Grid, Link, Box, Typography } from '@mui/material';
 import "../App.css"
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -14,45 +12,39 @@ const Footer = () => {
             width: "100%",
             height: "8rem"
             //Arreglar
-           // position: 'absolute',
-           // bottom: 0,
+            // position: 'absolute',
+            // bottom: 0,
         }}
         >
             <Grid container
                 alignItems="center"
                 align="center"
-                
+
             >
                 <Grid item xs={12}>
                     <Link
                         href="https://www.facebook.com/"
                         target="_blank"
                         underline="hover"
-                    //component={<FacebookIcon/>}
                     >
-                        <FacebookIcon fontSize="large" sx={{color:'white'}} />
-
+                        <FacebookIcon fontSize="large" sx={{ color: 'white' }} />
                     </Link>
                     <Link
                         href="https://www.instagram.com/"
                         target="_blank"
                         underline="hover"
                     >
-                        <InstagramIcon fontSize="large" sx={{color:'white'}} />
+                        <InstagramIcon fontSize="large" sx={{ color: 'white' }} />
                     </Link>
                 </Grid>
                 <Grid item xs={12}
                 >
-                    <Typography variant='h6'sx={{color:'white'}} >
+                    <Typography variant='h6' sx={{ color: 'white' }} >
                         Todos los derechos reservados ©
                     </Typography>
                 </Grid>
-
             </Grid>
         </Box>
-
-
-
     );
 }
 

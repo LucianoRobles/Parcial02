@@ -1,10 +1,10 @@
 import { useState, Fragment } from 'react';
-import { MenuItem, Select, FormControl, Grid, InputLabel, Input, Container, FormHelperText, Button, TextField, Autocomplete, Typography } from '@mui/material';
+import { Grid, Button, TextField, Autocomplete, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { v4 as uuid } from 'uuid';
 
 
-const Formulario = ({ agregarAsociado }) => {
+const Formulario = () => {
     //Hook
     const [reserva, editarReserva] = useState({
         nombre: "",
@@ -24,11 +24,6 @@ const Formulario = ({ agregarAsociado }) => {
             [e.target.name]: e.target.value,
         })
     };
-    /*
-    const [error, setError] = useState(false);
-    //Funciones
-
-*/
 
     const clearForm = () => {
         editarReserva({
@@ -43,21 +38,8 @@ const Formulario = ({ agregarAsociado }) => {
 
     const submitForm = () => {
         console.log(reserva)
-        //e.preventDefault();
-        //Enviar info al backend
-
         clearForm();
     };
-    //console.log("Usuario agregado");
-    /*
-    if (nombre.trim() === "" || dni.trim() === "" || email.trim() === "") {
-        setError(true)
-        return;
-    }
-    setError(false);
-    socio.id = uuid();
-    agregarAsociado(socio);*/
-
 
     return (
         <Fragment>
