@@ -1,7 +1,5 @@
-import { Card, CardMedia, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Card, CardMedia, Typography,Box } from '@mui/material';
 import React, { Fragment, useEffect, useState } from 'react';
-
 
 const Home = () => {
     //Hook

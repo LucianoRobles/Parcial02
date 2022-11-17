@@ -33,10 +33,10 @@ const Conocenos = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105070.0156696457!2d-58.71187580811861!3d-34.61837043332667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb8d396231f5d%3A0x2eb5499391748177!2sVilla%20Tesei%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1668545935960!5m2!1ses-419!2sar"
               width="80%"
-              height="20%"
+              //height="20%"
               frameBorder="0"
               fullWidth
-              allowFullScreen=""
+              allowFullScreen="2"
               aria-hidden="false"
               tabIndex="0"
             />
