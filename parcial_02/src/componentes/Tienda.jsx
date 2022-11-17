@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Tienda = ({ carrito, modificarCarrito }) => {
 
+    //Lista de productos.
+
     const listaProductos = [
         {
             srcImg: "https://http2.mlstatic.com/D_NQ_NP_608050-MLA48082894720_102021-O.webp",
@@ -58,6 +60,8 @@ const Tienda = ({ carrito, modificarCarrito }) => {
 
     ];
 
+    //Funciones
+
     const seleccionarProducto = (producto) => {
         const productAux = { ...producto, id: uuidv4() }
         modificarCarrito([...carrito, productAux]);
@@ -73,14 +77,14 @@ const Tienda = ({ carrito, modificarCarrito }) => {
             justifyContent="center"
             alignItems="center"
             align="center"
-
         >
+
             <Grid item xs={12}>
                 <Typography variant='h3'>
                     Tienda
                 </Typography>
             </Grid>
-
+            
             {listaProductos.map(product =>
                 <Grid item auto>
                     <ProductItem

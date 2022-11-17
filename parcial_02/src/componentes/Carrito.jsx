@@ -5,10 +5,14 @@ import '../App.css';
 
 const Carrito = ({ carrito, modificarCarrito }) => {
 
+    //Funciones
+
     const eliminarCompra = (product) => {
         let listaAux = carrito.filter(item => item.id != product.id);
         modificarCarrito(listaAux);
     }
+
+    //Variable para cambio de titulo en el carrito.
 
     let titulo2 = carrito.length === 0 ? "Aun no tienes nada en el carrito, puedes ir a la tienda" : "Carrito de compras";
 

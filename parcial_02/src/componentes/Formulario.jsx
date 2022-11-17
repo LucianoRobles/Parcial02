@@ -16,6 +16,8 @@ const Formulario = () => {
 
     const { nombre, email, telefono, fecha, nombreMascota, tamanio } = reserva;
 
+    //Funciones
+    
     const handleChange = (e) => {
         editarReserva({
             ...reserva,

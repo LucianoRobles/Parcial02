@@ -4,10 +4,12 @@ import React, { Fragment, useEffect, useState } from 'react';
 
 
 const Home = () => {
-
+    //Hook
     const [imgMascota,setImgMascota] = useState("");
     const [hasChange,setHasChange] = useState(false);
     
+    //Funciones
+    // Invocamos una api
 
     async function get(){
         const mascota =  await fetch('https://dog.ceo/api/breeds/image/random');
@@ -15,10 +17,10 @@ const Home = () => {
         setImgMascota(image.message);
     };
     
+    /* Utilizamos un useEffect para actualizar la imagen del Home 
+    del documento usando la API del navegador solo una ves por carga.*/
+   
     useEffect(() => {
-        // Actualiza el título del documento usando la API del navegador solo una ves por carga.
-        
-        
         if(!hasChange){
             get();
             setHasChange(true);

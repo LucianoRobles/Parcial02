@@ -1,10 +1,13 @@
-import {AppBar,Container,Button,Icon} from '@mui/material';
+import { AppBar, Container, Button, Icon } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { React } from "react";
 
 
 
-function Header() {
+const Header = () => {
+
+    //Lista de paginas a referenciar en el menu
+
     const pages = [
         { field: 'Home', path: '/home', icono: "home" },
         { field: 'Conocenos', path: '/conocenos', icono: "face" },
@@ -14,46 +17,43 @@ function Header() {
     ];
 
     return (
-        
-            <AppBar
-                position="static"
-                sx={{
-                    borderRadius:"16px"
-                }}               
+        <AppBar
+            position="static"
+            sx={{
+                borderRadius: "16px"
+            }}
+        >
+            <Container
+                align="center"
+                variant="container"
+                color="white"
             >
-                <Container
-                    align="center"
-                    variant="container"
-                    color="white"                    
-                >
-                    {pages.map(page =>
-                        <Link
-                            to={page.path} >
-                            <Button
-                               // color='success'
-                                variant="contained"
-                                color="inherit"
-                                size="medium"
-                                sx={{
-                                    margin:"8px",
-                                    padding:"8px",
-                                    borderRadius:"16px"
-                                }}
+                {pages.map(page =>
+                    <Link
+                        to={page.path} >
+                        <Button
+                            variant="contained"
+                            color="inherit"
+                            size="medium"
+                            sx={{
+                                margin: "8px",
+                                padding: "8px",
+                                borderRadius: "16px"
+                            }}
+                        >
+                            {page.field}
+                            {<Icon
+                                fontSize="medium"
+                                color="info"
                             >
-                                {page.field}
+                                {page.icono}
+                            </Icon>}
+                        </Button>
+                    </Link>
+                )}
+            </Container>
+        </AppBar>
 
-                                {<Icon
-                                    fontSize="medium"
-                                    color="info"
-                                >
-                                    {page.icono}
-                                </Icon>}
-                            </Button>
-                        </Link>
-                    )}
-                </Container>
-            </AppBar>
-        
     );
 }
 export default Header;

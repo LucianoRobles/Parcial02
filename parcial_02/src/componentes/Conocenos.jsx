@@ -1,4 +1,3 @@
-
 import { Grid, Typography, Link } from '@mui/material';
 import { React, Fragment } from 'react';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -12,8 +11,8 @@ const Conocenos = () => {
       <Grid
         container
         direction="row"
-        justifyContent={"center"}
-        alignItems={"center"}
+        justifyContent="center"
+        alignItems="center"
         spacing={2}
         align="center"
       >
