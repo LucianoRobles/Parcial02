@@ -12,6 +12,7 @@ const Footer = () => {
                 backgroundColor: 'primary.dark',
                 width: "100%",
                 height: "8rem",
+                borderRadius:"16px"
             }}
                 alignItems="center"
                 align="center"

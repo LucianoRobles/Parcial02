@@ -42,7 +42,7 @@ const Home = () => {
                       alt="Mascota"
                     />
                 </Card>
-                <Typography variant="h6">
+                <Typography variant="h4">
                     En nuestra pagina conoceras nuestra tienda, podras reservar un turno para peluqueria, conocernos y mucho mas.
                 </Typography>
             </Box>

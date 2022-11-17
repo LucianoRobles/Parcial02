@@ -34,7 +34,8 @@ const Formulario = () => {
         });
     }
 
-    const submitForm = () => {
+    const submitForm = (e) => {
+        e.preventDefault();
         console.log(reserva)
         clearForm();
     };
@@ -127,7 +128,9 @@ const Formulario = () => {
                             variant="contained"
                             size="large"
                             endIcon={<SendIcon />}
-                            fullWidth
+                            sx={{
+                                width:"80%",
+                            }}
 
                         >
                             Enviar

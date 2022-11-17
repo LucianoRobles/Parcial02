@@ -16,7 +16,10 @@ function Header() {
     return (
         
             <AppBar
-                position="static"               
+                position="static"
+                sx={{
+                    borderRadius:"16px"
+                }}               
             >
                 <Container
                     align="center"
@@ -33,7 +36,8 @@ function Header() {
                                 size="medium"
                                 sx={{
                                     margin:"8px",
-                                    padding:"8px"
+                                    padding:"8px",
+                                    borderRadius:"16px"
                                 }}
                             >
                                 {page.field}

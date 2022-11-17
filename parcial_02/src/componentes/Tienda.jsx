@@ -61,10 +61,7 @@ const Tienda = ({ carrito, modificarCarrito }) => {
     const seleccionarProducto = (producto) => {
         const productAux = { ...producto, id: uuidv4() }
         modificarCarrito([...carrito, productAux]);
-        console.log(carrito)
     }
-
-
 
     return (
         <Grid
