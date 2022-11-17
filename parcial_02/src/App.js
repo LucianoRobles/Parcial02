@@ -1,17 +1,18 @@
 import { React, Fragment, useState, useEffect } from "react";
-import {BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
+import { Grid } from '@mui/material';
+
 import Footer from "./componentes/Footer";
 import Header from "./componentes/Header";
 import Home from "./componentes/Home";
 import Formulario from "./componentes/Formulario";
 import Conocenos from "./componentes/Conocenos";
 import Tienda from "./componentes/Tienda";
-import {Grid} from '@mui/material';
 import Carrito from "./componentes/Carrito";
 
 export default function App() {
 
-  //Hook and Local Storage
+  //Hook and Local Storage utilizado para persistir el carrito de compras
 
   let carritoInicial = JSON.parse(localStorage.getItem('carrito'));
   if (!carritoInicial) {
@@ -19,6 +20,8 @@ export default function App() {
   };
 
   const [carrito, modificarCarrito] = useState(carritoInicial);
+
+  //Modificacion de staroge
 
   useEffect(
     () => {
@@ -30,10 +33,7 @@ export default function App() {
     }, [carritoInicial]
   );
 
-  // App
-
   return (
-
     <Fragment>
       <Router>
         <Grid
@@ -44,7 +44,7 @@ export default function App() {
           >
             <Header />
           </Grid>
-          <Grid item xs={12}        
+          <Grid item xs={12}
           >
             <Switch>
               <Route path="/home">
@@ -70,7 +70,7 @@ export default function App() {
               </Route>
             </Switch>
           </Grid>
-          <Grid item xs={12}        
+          <Grid item xs={12}
           >
             <Footer />
           </Grid>
