@@ -1,8 +1,6 @@
 import { useState, Fragment } from 'react';
-import { Grid, Button, TextField, Autocomplete, Typography } from '@mui/material';
+import { Grid, Button, TextField, Autocomplete, Typography, Select,MenuItem } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import { v4 as uuid } from 'uuid';
-
 
 const Formulario = () => {
     //Hook
@@ -43,96 +41,101 @@ const Formulario = () => {
 
     return (
         <Fragment>
-            <Grid 
-                container 
-                spacing={2}
-                rowSpacing={4}
-                
-            >
-                <Grid item xs={12}>
-                    <Typography fontSize="large">Reservar turno</Typography>
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        name="nombre"
-                        onChange={(e) => handleChange(e)}
-                        value={nombre}
-                        placeholder="Ingrese el nombre"
-                        label="Nombre"
-                        fullWidth
+            <form onSubmit={submitForm}>
+                <Grid
+                    container
+                    spacing={2}
+                    rowSpacing={4}
+                    align="center"
+                >
+                    <Grid item xs={12}>
+                        <Typography variant= "h3" >Reservar turno</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            name="nombre"
+                            onChange={(e) => handleChange(e)}
+                            value={nombre}
+                            placeholder="Ingrese el nombre"
+                            label="Nombre"
+                            fullWidth
+                            required
 
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        name="email"
-                        onChange={handleChange}
-                        value={email}
-                        placeholder="Email"
-                        type="email"
-                        fullWidth
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        name="telefono"
-                        onChange={handleChange}
-                        value={telefono}
-                        placeholder="Telefono personal"
-                        type="tel"
-                        fullWidth
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        name="fecha"
-                        onChange={handleChange}
-                        value={fecha}
-                        placeholder="Fecha"
-                        type="date"
-                        fullWidth
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <TextField
-                        name="nombreMascota"
-                        onChange={handleChange}
-                        value={nombreMascota}
-                        placeholder="Nombre mascota"
-                        fullWidth
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            name="email"
+                            onChange={handleChange}
+                            value={email}
+                            placeholder="Email"
+                            type="email"
+                            fullWidth
+                            required
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            name="telefono"
+                            onChange={handleChange}
+                            value={telefono}
+                            placeholder="Telefono personal"
+                            type="tel"
+                            fullWidth
+                            required
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            name="fecha"
+                            onChange={handleChange}
+                            value={fecha}
+                            placeholder="Fecha"
+                            type="date"
+                            fullWidth
+                            required
+                        />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <TextField
+                            name="nombreMascota"
+                            onChange={handleChange}
+                            value={nombreMascota}
+                            placeholder="Nombre mascota"
+                            fullWidth
+                            required
 
-                    />
-                </Grid>
-                <Grid item xs={6}>
-                    <Autocomplete
-                        name="tamanio"
-                        onChange={handleChange}
-                        value={tamanio}
-                        placeholder="Tamaño de la mascota"
-                        autoComplete
-                        options={["Grande", "Chico", "Mediano"]}
-                        renderInput={(params) => 
-                            <TextField 
-                                {...params} 
-                                label="Tamaño" 
-                                fullWidth
-                            />
-                        }
+                        />
+                    </Grid>                    
+                    <Grid item xs={6}>
+                        <Select
+                            name="tamanio"
+                            onChange={handleChange}
+                            value={tamanio}
+                            placeholder="Tamaño de la mascota"
+                            required
+                            fullWidth
+                        >   
+                            <MenuItem value={"Chico"}>Chico</MenuItem>
+                            <MenuItem value={"Mediano"}>Mediano</MenuItem>
+                            <MenuItem value={"Grande"}>Grande</MenuItem>
+                        </Select>
+                    </Grid>
+                    <Grid item xs={12} align="center">
+                        <Button
+                            type='submit'
+                            variant="contained"
+                            size="large"
+                            endIcon={<SendIcon />}
+                            fullWidth
 
-                    />
+                        >
+                            Enviar
+                        </Button>
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} align="center">
-                    <Button
-                        onClick={submitForm}
-                        variant="contained"
-                        size="large"
-                        endIcon={<SendIcon/>}
-                        fullWidth
-                    >
-                        Enviar
-                    </Button>
-                </Grid>
-            </Grid>
+            </form>
+
         </Fragment>
     );
 }

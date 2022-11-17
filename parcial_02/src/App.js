@@ -38,12 +38,15 @@ export default function App() {
       <Router>
         <Grid
           container
-          spacing={1}
+          spacing={2}
         >
-          <Grid item xs={12}>
+          <Grid item xs={12}
+          >
             <Header />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12}
+            
+          >
             <Switch>
               <Route path="/home">
                 <Home />
@@ -68,7 +71,8 @@ export default function App() {
               </Route>
             </Switch>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12}        
+          >
             <Footer />
           </Grid>
         </Grid>

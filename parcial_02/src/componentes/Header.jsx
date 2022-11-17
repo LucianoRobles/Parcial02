@@ -16,20 +16,31 @@ function Header() {
     return (
         
             <AppBar
-                position="static"
+                position="static"               
             >
-                <Container                    
+                <Container
+                    align="center"
+                    variant="container"
+                    color="white"                    
                 >
                     {pages.map(page =>
                         <Link
                             to={page.path} >
                             <Button
-                                color='error'
+                               // color='success'
+                                variant="contained"
+                                color="inherit"
+                                size="medium"
+                                sx={{
+                                    margin:"8px",
+                                    padding:"8px"
+                                }}
                             >
                                 {page.field}
 
                                 {<Icon
-                                    fontSize="small"
+                                    fontSize="medium"
+                                    color="info"
                                 >
                                     {page.icono}
                                 </Icon>}

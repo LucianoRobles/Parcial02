@@ -13,7 +13,7 @@ const Carrito = ({ carrito, modificarCarrito }) => {
     }
 
     let titulo2 = carrito.length === 0 ? "Aun no tienes nada en el carrito, puedes ir a la tienda" : "Carrito de compras";
-    
+    /*
     return (
         <div className="container">
             <Typography variant="h3" align="center">{titulo2}</Typography>
@@ -32,9 +32,10 @@ const Carrito = ({ carrito, modificarCarrito }) => {
             </div>
         </div>
     );
-    /*
+    */
+    
     return (
-        <>
+        
         <Grid
             container
             spacing={2}
@@ -55,8 +56,6 @@ const Carrito = ({ carrito, modificarCarrito }) => {
                 
             </Typography>
             </Grid>
-            
-
                 {
                     carrito.map(
                         (product) =>
@@ -72,9 +71,9 @@ const Carrito = ({ carrito, modificarCarrito }) => {
 
             
             </Grid>
-        </>
+        
     );
-    */
+    
 }
 
 

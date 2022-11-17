@@ -79,7 +79,7 @@ const Tienda = ({ carrito, modificarCarrito }) => {
 
         >
             <Grid item xs={12}>
-                <Typography variant='h4'>
+                <Typography variant='h3'>
                     Tienda
                 </Typography>
             </Grid>

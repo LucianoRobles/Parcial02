@@ -9,13 +9,16 @@ const Home = () => {
     const [hasChange,setHasChange] = useState(false);
     
 
+    async function get(){
+        const mascota =  await fetch('https://dog.ceo/api/breeds/image/random');
+        const image = await mascota.json();
+        setImgMascota(image.message);
+    };
+    
     useEffect(() => {
-        // Actualiza el título del documento usando la API del navegador
-        async function get(){
-            const mascota =  await fetch('https://dog.ceo/api/breeds/image/random');
-            const image = await mascota.json();
-            setImgMascota(image.message);
-        };
+        // Actualiza el título del documento usando la API del navegador solo una ves por carga.
+        
+        
         if(!hasChange){
             get();
             setHasChange(true);
@@ -27,9 +30,6 @@ const Home = () => {
         <Fragment>
             <Box
                 align="center"
-                sx={{
-                    padding: '2rem'
-                }}
             >
                 <Typography variant="h3">
                     Bienvenidos al Pet Shop "Osiris"
@@ -37,7 +37,7 @@ const Home = () => {
                 <Card>
                     <CardMedia
                       component="img"
-                      height="400rem"
+                      height="500rem"
                       image={imgMascota}
                       alt="Mascota"
                     />

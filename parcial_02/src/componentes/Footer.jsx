@@ -6,17 +6,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
-        <Box sx={{
-            display: "flex",
-            backgroundColor: 'primary.dark',
-            width: "100%",
-            height: "8rem"
-            //Arreglar
-            // position: 'absolute',
-            // bottom: 0,
-        }}
-        >
             <Grid container
+            sx={{
+                display: "flex",
+                backgroundColor: 'primary.dark',
+                width: "100%",
+                height: "8rem",
+            }}
                 alignItems="center"
                 align="center"
 
@@ -44,7 +40,7 @@ const Footer = () => {
                     </Typography>
                 </Grid>
             </Grid>
-        </Box>
+      
     );
 }
 
